@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alkotest</title>
+  <style>
+    img {
+      height: 200px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      margin: 0.5em;
+      padding: 0.5em;
+      /* border: 1px solid; */
+      border-radius: 2em;
+    }
+
+    img:hover {
+      box-shadow: 1px 1px 5px #aaa;
+      transform: translate(-1px, -1px);
+    }
+
+    img:active {
+      transform: translate(1px, 1px);
+      box-shadow: 0 0 0;
+    }
+
+    .skygge {
+      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+      transform: translate(-1px, -1px);
+      transition: 0.1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <img id="snaps" src="billeder/snaps.webp" alt="snaps" class="" />
+    <img id="fanta" src="billeder/fanta.webp" alt="fanta" class="" />
+    <img id="cola" src="billeder/cola.webp" alt="cola" class="" />
+    <img id="øl" src="billeder/øl.webp" alt="øl" class="" />
+  </div>
+  <h2>Åbn konsollen for at se svaret</h2>
+
+  <script>
+    const snaps = document.querySelector("#snaps");
+    snaps.addEventListener("click", tjek);
+
+    document.querySelector("#fanta").addEventListener("click", tjek);
+    document.querySelector("#cola").addEventListener("click", tjek);
+    document.querySelector("#øl").addEventListener("click", tjek);
+
+    function tjek() {
+      console.log(this.alt);
+      if (this.alt == "øl" || this.alt == "snaps") {
+        console.log("indeholder alkohol");
+      } else {
+        console.log("alkoholfri");
+      }
+    }
+  </script>
+</body>
+
+</html>
